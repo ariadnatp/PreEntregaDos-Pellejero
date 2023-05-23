@@ -4,7 +4,6 @@ const pasajeGr = 1000;
 
 let nombreUsuario = prompt("hola! ingresa tu nombre: ")
 alert ("te damos la bienvenida a la calculadora de pasajes kg/gr "+nombreUsuario);
-let pasaje = prompt ("que pasaje necesitas hacer? \n- a KG \n- a GR \n- SALIR");
 
 function calcular(){
     if(pasaje == "kg" || pasaje == "KG"){
@@ -22,4 +21,4 @@ function calcular(){
 do{
     let pasaje = prompt ("que pasaje necesitas hacer? \n- a KG \n- a GR \n- SALIR");
     calcular();
-}while (pasaje === "salir" || pasaje == "SALIR");
+}while (pasaje == "salir" || pasaje == "SALIR");
