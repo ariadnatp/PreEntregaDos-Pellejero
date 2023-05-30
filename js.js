@@ -6,8 +6,7 @@ let nombreUsuario = prompt("¡Hola! Ingresa tu nombre: ");
 alert("Te damos la bienvenida a la calculadora de pasajes kg/gr, " + nombreUsuario + "!");
 
 do {
-   let pasaje = prompt("¿Qué pasaje necesitas hacer?\n- a KG\n- a GR\n- SALIR"); 
-
+    pasaje = prompt("¿Qué pasaje necesitas hacer?\n- a KG\n- a GR\n- SALIR"); 
     if (pasaje == "kg" || pasaje == "KG") {
         let numeroGr = parseInt(prompt("Ingresa el número que quieres pasar a Kg:"));
         let multiplicacionGrAKg = numeroGr * pasajeKg;
