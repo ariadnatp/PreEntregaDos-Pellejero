@@ -14,13 +14,15 @@ while (pasaje.toLowerCase() != "salir") {
         let numeroGr = parseInt(prompt("Ingresa el número que quieres pasar a Kg: "));
         let multiplicacionGrAKg = numeroGr * pasajeKg;
         let resultadoKg = multiplicacionGrAKg / pasajeGr;
-        datos.push(" " +numeroGr + "-->" +resultadoKg + "Kg");
+        //datos.push(" " +numeroGr + "-->" +resultadoKg + "Kg");
+        datos.push({numeroIngresado: numeroGr, pasaje: "Kg", resultado: +resultadoKg});
         alert("Gr (el número que ingresaste) --> " + numeroGr + "\nKg (resultado) --> " + resultadoKg);
     }else if (pasaje.toLowerCase() == "gr"){
         let numeroKg = parseInt(prompt("Ingresa el número que quieras pasar a Gr: "));
         let multiplicacionKgAGr = numeroKg * pasajeGr;
         let resultadoGr = multiplicacionKgAGr / pasajeKg;
-        datos.push(" " +numeroKg + "-->" +resultadoGr + "Gr");
+        //datos.push(" " +numeroKg + "-->" +resultadoGr + "Gr");
+        datos.push({numeroIngresado: numeroKg, pasaje: "Gr", resultado: +resultadoGr});
         alert("Kg (el número que ingresaste) --> " + numeroKg + "\nGr (resultado) --> " + resultadoGr);
     }else{
         alert("Opción inválida. Inténtalo nuevamente.");
@@ -31,7 +33,9 @@ alert("Hasta luego, " + nombreUsuario + "!");
 datos.reverse();
 console.log(datos);
 
-const datoTabla = datos.filter ((datos) => datos.includes("Kg"));
-const datoTablaDos = datos.filter ((datos) => datos.includes("Gr"));
-console.tabla(datoTabla);
-console.tabla(datoTablaDos);
+let resultadosKg = datos.filter(resultado => resultado.pasaje === "Kg");
+let resultadosGr = datos.filter(resultado => resultado.pasaje === "Gr");
+console.log("Historial de resultados de Kg:");
+console.table(resultadosKg);
+console.log("Historial de resultados de Gr:");
+console.table(resultadosGr);
